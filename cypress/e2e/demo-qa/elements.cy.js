@@ -2,6 +2,7 @@ import CheckBoxPage from "../../pageObjects/checkBoxPage";
 import RadioButtonsPage from "../../pageObjects/radioButtonsPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 import WebTablespage from "../../pageObjects/webTablesPage";
+import ButtonsPage from "../../pageObjects/buttonsPage";
 
 context("Elements Page", () => {
   /*context("Text box scenarios", () => {
@@ -123,18 +124,29 @@ context("Elements Page", () => {
     // Validate that we see text - No rows found
       });
       it("WebTables2", () => {
-        
+        /*
           WebTablespage.DeleteRecordsByEmail("kierra@example.com");
           WebTablespage.DeleteRecordsByEmail("alden@example.com"); 
           WebTablespage.DeleteRecordsByEmail("cierra@example.com"); 
           WebTablespage.ValidateEmpty.contains('No rows found');
-        
+        */
       });
     });
   });
 
   context("Buttons scenarios", () => {
+    context("Radio button scenarios", () => {
+      beforeEach(() => {
+        ButtonsPage.visit();
+      });
     it("buttons", () => {
+      ButtonsPage.DoubleClick.dblclick();
+      ButtonsPage.ValidateDoubleClick.contains("You have done a double click");
+      ButtonsPage.RightClick.rightclick();
+      ButtonsPage.ValidateRightClick.contains("You have done a right click");
+      ButtonsPage.ClickMe("Click Me");
+      ButtonsPage.ValidateClickMe.contains("You have done a dynamic click");
+
     // Create buttons clicking scenario
     // Create Buttons page
     // Check documentation https://docs.cypress.io/api/commands/and for how to perform different types of clicking
@@ -145,4 +157,5 @@ context("Elements Page", () => {
     // Do dynamic click
     // Validate dynamic click message
   });
+});
 });
