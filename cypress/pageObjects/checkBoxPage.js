@@ -10,12 +10,14 @@ class CheckBoxPage extends BasePage {
   }
 
   static get Leafs(){
-      return cy.get('span.rct-text');
+      return cy.get('.rct-text');
   }
 
   static get Results(){
       return cy.get('#result');
   }
+
+ 
 }
 
 export default CheckBoxPage;

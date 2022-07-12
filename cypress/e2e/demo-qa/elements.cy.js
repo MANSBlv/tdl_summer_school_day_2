@@ -1,4 +1,5 @@
 import CheckBoxPage from "../../pageObjects/checkBoxPage";
+import RadioButtonsPage from "../../pageObjects/radioButtonsPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 
 context("Elements Page", () => {
@@ -27,7 +28,7 @@ context("Elements Page", () => {
   context("Check box scenarios", () => {
     beforeEach(() => {
       CheckBoxPage.visit();
-    });
+    });/*
     it("CheckBoxes", () => {
     CheckBoxPage.Expand.click();
     CheckBoxPage.Leafs.contains("Notes").click();
@@ -45,20 +46,35 @@ context("Elements Page", () => {
 
 
 
-    });
+    });*/
     // Create CheckBoxPage page object
     // Create checkbox scenario 1:
     // Click the "+"/expand button
     // Click Notes, React, Angular, General, Excel File.doc
     // Validate the clicked checkboxes
-
+    it("CheckBoxes2", () => {
+      CheckBoxPage.Expand.click();
+      CheckBoxPage.Leafs.contains('Office').click();
+      CheckBoxPage.Results.contains('office');
+      CheckBoxPage.Results.contains('public');
+      CheckBoxPage.Results.contains('private');
+      CheckBoxPage.Results.contains('classified');
+      CheckBoxPage.Results.contains('general');
+      
+    });
     // Create checkbox scenario 2:
     // Click expand button
     // Click Office
     // Validate the checked checkboxes
   });
 
-  context("Radio button scenarios", () => {
+  /*context("Radio button scenarios", () => {
+    beforeEach(() => {
+      RadioButtonsPage.visit();
+    });
+    it("CheckBoxes", () => {
+*/
+
     // Create RadioButtons page object
     // Scenario 1:
     // Click yesButton
@@ -66,7 +82,8 @@ context("Elements Page", () => {
     // click impressiveButton
     // validate the message
     // noButton - validate that the button exists but is disabled
-  });
+   // });
+  //});
 
   context("Web tables scenarios", () => {
     // Create WebTables page object
