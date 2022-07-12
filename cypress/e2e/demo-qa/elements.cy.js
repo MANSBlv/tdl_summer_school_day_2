@@ -25,7 +25,7 @@ context("Elements Page", () => {
     });
   //});
 
-  context("Check box scenarios", () => {
+  /*context("Check box scenarios", () => {
     beforeEach(() => {
       CheckBoxPage.visit();
     });/*
@@ -52,7 +52,7 @@ context("Elements Page", () => {
     // Click the "+"/expand button
     // Click Notes, React, Angular, General, Excel File.doc
     // Validate the clicked checkboxes
-    it("CheckBoxes2", () => {
+    /*it("CheckBoxes2", () => {
       CheckBoxPage.Expand.click();
       CheckBoxPage.Leafs.contains('Office').click();
       CheckBoxPage.Results.contains('office');
@@ -61,20 +61,24 @@ context("Elements Page", () => {
       CheckBoxPage.Results.contains('classified');
       CheckBoxPage.Results.contains('general');
       
-    });
+    });*/
     // Create checkbox scenario 2:
     // Click expand button
     // Click Office
     // Validate the checked checkboxes
-  });
+  //});
 
-  /*context("Radio button scenarios", () => {
+  context("Radio button scenarios", () => {
     beforeEach(() => {
       RadioButtonsPage.visit();
     });
-    it("CheckBoxes", () => {
-*/
-
+    it("RadioButtons", () => {
+      RadioButtonsPage.YesButton.click();
+      RadioButtonsPage.ValidateYes.contains('Yes');
+      RadioButtonsPage.ImpressiveButton.click();
+      RadioButtonsPage.ValidateYes.contains('Impressive');
+      RadioButtonsPage.NoButton.should('be.visible')
+      RadioButtonsPage.ValidateNoButton.should('be.disabled');
     // Create RadioButtons page object
     // Scenario 1:
     // Click yesButton
@@ -82,8 +86,8 @@ context("Elements Page", () => {
     // click impressiveButton
     // validate the message
     // noButton - validate that the button exists but is disabled
-   // });
-  //});
+   });
+  });
 
   context("Web tables scenarios", () => {
     // Create WebTables page object
