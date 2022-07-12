@@ -5,8 +5,16 @@ class CheckBoxPage extends BasePage {
     return "/checkbox";
   }
 
-  static get Home(){
-      return cy.get('#tree-node-home');
+  static get Expand(){
+      return cy.get('.rct-option-expand-all');
+  }
+
+  static get Leafs(){
+      return cy.get('span.rct-text');
+  }
+
+  static get Results(){
+      return cy.get('#result');
   }
 }
 

@@ -2,10 +2,10 @@ import CheckBoxPage from "../../pageObjects/checkBoxPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 
 context("Elements Page", () => {
-  context("Text box scenarios", () => {
+  /*context("Text box scenarios", () => {
     beforeEach(() => {
       TextBoxPage.visit();
-    });
+    });*/
 
     // Create texbox scenario
     // fill in textboxes with necessary information
@@ -22,10 +22,30 @@ context("Elements Page", () => {
       TextBoxPage.Output.contains('Random Street 1');
       TextBoxPage.Output.contains('Random Street 2');*/
     });
-  });
+  //});
 
   context("Check box scenarios", () => {
-    CheckBoxPage.Home.click();
+    beforeEach(() => {
+      CheckBoxPage.visit();
+    });
+    it("CheckBoxes", () => {
+    CheckBoxPage.Expand.click();
+    CheckBoxPage.Leafs.contains("Notes").click();
+    CheckBoxPage.Leafs.contains("React").click();
+    CheckBoxPage.Leafs.contains("Angular").click();
+    CheckBoxPage.Leafs.contains("General").click();
+    CheckBoxPage.Leafs.contains("Excel File.doc").click();
+    CheckBoxPage.Results.contains('notes');
+    CheckBoxPage.Results.contains('react');
+    CheckBoxPage.Results.contains('angular');
+    CheckBoxPage.Results.contains('general');
+    CheckBoxPage.Results.contains('excelFile');
+
+
+
+
+
+    });
     // Create CheckBoxPage page object
     // Create checkbox scenario 1:
     // Click the "+"/expand button
