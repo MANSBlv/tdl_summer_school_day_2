@@ -1,3 +1,4 @@
+import CheckBoxPage from "../../pageObjects/checkBoxPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 
 context("Elements Page", () => {
@@ -10,11 +11,21 @@ context("Elements Page", () => {
     // fill in textboxes with necessary information
     // validate the paragraphs
     it("Filling in Text Boxes", () => {
-      // add the necessary steps
+      /*TextBoxPage.FullName.type("Random Random");
+      TextBoxPage.Email.type("Random@hotmail.com");
+      TextBoxPage.CurretntAddress.type("Random Street 1");
+      TextBoxPage.PermanentAddress.type("Random Street 2");
+      TextBoxPage.SubmitButton.click();
+      TextBoxPage.Output.contains('Random Random');
+      
+      TextBoxPage.Output.contains('Random@hotmail.com');
+      TextBoxPage.Output.contains('Random Street 1');
+      TextBoxPage.Output.contains('Random Street 2');*/
     });
   });
 
   context("Check box scenarios", () => {
+    CheckBoxPage.Home.click();
     // Create CheckBoxPage page object
     // Create checkbox scenario 1:
     // Click the "+"/expand button
