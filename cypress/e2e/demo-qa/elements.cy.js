@@ -1,6 +1,7 @@
 import CheckBoxPage from "../../pageObjects/checkBoxPage";
 import RadioButtonsPage from "../../pageObjects/radioButtonsPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
+import WebTablespage from "../../pageObjects/webTablesPage";
 
 context("Elements Page", () => {
   /*context("Text box scenarios", () => {
@@ -68,7 +69,7 @@ context("Elements Page", () => {
     // Validate the checked checkboxes
   //});
 
-  context("Radio button scenarios", () => {
+  /*context("Radio button scenarios", () => {
     beforeEach(() => {
       RadioButtonsPage.visit();
     });
@@ -78,7 +79,7 @@ context("Elements Page", () => {
       RadioButtonsPage.ImpressiveButton.click();
       RadioButtonsPage.ValidateYes.contains('Impressive');
       RadioButtonsPage.NoButton.should('be.visible')
-      RadioButtonsPage.ValidateNoButton.should('be.disabled');
+      RadioButtonsPage.ValidateNoButton.should('be.disabled');*/
     // Create RadioButtons page object
     // Scenario 1:
     // Click yesButton
@@ -86,10 +87,29 @@ context("Elements Page", () => {
     // click impressiveButton
     // validate the message
     // noButton - validate that the button exists but is disabled
-   });
-  });
+   //});
+  //});
 
   context("Web tables scenarios", () => {
+    context("Radio button scenarios", () => {
+      beforeEach(() => {
+        WebTablespage.visit();
+      });
+      it("WebTables", () => {
+        /*WebTablespage.AddButton.click();
+        WebTablespage.FirstName.type("Random");
+        WebTablespage.LastName.type("HellaRandom");
+        WebTablespage.Email.type('Random@gmail.com');
+        WebTablespage.Age.type("90");
+        WebTablespage.Salary.type('1500');
+        WebTablespage.Department.type('Festivaletaju');
+        WebTablespage.SubmitButtton.click();
+        WebTablespage.ValidateInputt.contains("Random").should('be.visible');
+        WebTablespage.ValidateInputt.contains("HellaRandom").should('be.visible');
+        WebTablespage.ValidateInputt.contains("Random@gmail.com").should('be.visible');
+        WebTablespage.ValidateInputt.contains("90").should('be.visible');
+        WebTablespage.ValidateInputt.contains("Festivaletaju").should('be.visible');*/
+        
     // Create WebTables page object
     // Create scenario 1:
     // Click add record button
@@ -101,6 +121,11 @@ context("Elements Page", () => {
     // Create Scenario 2:
     // Delete all table rows
     // Validate that we see text - No rows found
+      });
+      it("WebTables2", () => {
+        WebTablespage.DeleteRecords.click({multiple:true});
+      });
+    });
   });
 
   context("Buttons scenarios", () => {
