@@ -40,8 +40,12 @@ class WebTablespage extends BasePage {
       return cy.get('[class="rt-tr-group"]');
   }
 
-  static get DeleteRecords(){
-      return cy.get("[title='Delete']");
+  static DeleteRecords(email){
+    return this.ValidateInputt.contains(email).parent().find("[title='Delete']").click();
+  }
+
+  static get ValidateEmpty(){
+      return cy.get("[class='rt-noData']");
   }
 
 }

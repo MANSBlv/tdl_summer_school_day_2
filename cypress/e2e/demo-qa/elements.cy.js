@@ -29,9 +29,9 @@ context("Elements Page", () => {
   /*context("Check box scenarios", () => {
     beforeEach(() => {
       CheckBoxPage.visit();
-    });/*
+    });*/
     it("CheckBoxes", () => {
-    CheckBoxPage.Expand.click();
+    /*CheckBoxPage.Expand.click();
     CheckBoxPage.Leafs.contains("Notes").click();
     CheckBoxPage.Leafs.contains("React").click();
     CheckBoxPage.Leafs.contains("Angular").click();
@@ -41,13 +41,13 @@ context("Elements Page", () => {
     CheckBoxPage.Results.contains('react');
     CheckBoxPage.Results.contains('angular');
     CheckBoxPage.Results.contains('general');
-    CheckBoxPage.Results.contains('excelFile');
+    CheckBoxPage.Results.contains('excelFile');*/
 
 
 
 
 
-    });*/
+    });
     // Create CheckBoxPage page object
     // Create checkbox scenario 1:
     // Click the "+"/expand button
@@ -67,7 +67,7 @@ context("Elements Page", () => {
     // Click expand button
     // Click Office
     // Validate the checked checkboxes
-  //});
+  });
 
   /*context("Radio button scenarios", () => {
     beforeEach(() => {
@@ -123,12 +123,18 @@ context("Elements Page", () => {
     // Validate that we see text - No rows found
       });
       it("WebTables2", () => {
-        WebTablespage.DeleteRecords.click({multiple:true});
+        
+          WebTablespage.DeleteRecordsByEmail("kierra@example.com");
+          WebTablespage.DeleteRecordsByEmail("alden@example.com"); 
+          WebTablespage.DeleteRecordsByEmail("cierra@example.com"); 
+          WebTablespage.ValidateEmpty.contains('No rows found');
+        
       });
     });
   });
 
   context("Buttons scenarios", () => {
+    it("buttons", () => {
     // Create buttons clicking scenario
     // Create Buttons page
     // Check documentation https://docs.cypress.io/api/commands/and for how to perform different types of clicking
