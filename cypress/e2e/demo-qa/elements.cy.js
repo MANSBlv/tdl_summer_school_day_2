@@ -4,6 +4,7 @@ import TextBoxPage from "../../pageObjects/textBoxPage";
 import WebTablespage from "../../pageObjects/webTablesPage";
 import ButtonsPage from "../../pageObjects/buttonsPage";
 import ToolTipsPage from "../../pageObjects/toolTipsPage";
+import Progressbar from "../../pageObjects/progressbar";
 
 context("Elements Page", () => {
   /*context("Text box scenarios", () => {
@@ -160,7 +161,7 @@ context("Elements Page", () => {
  /* });
 });
 });*/
-context("Tool Tips ", () => {
+/*context("Tool Tips ", () => {
   context("Tool Tips scenarios", () => {
     beforeEach(() => {
       ToolTipsPage.visit();
@@ -173,17 +174,37 @@ context("Tool Tips ", () => {
     ToolTipsPage.text();
     ToolTipsPage.ValidateContrary.should('be.visible');
     ToolTipsPage.number();
-    ToolTipsPage.ValidateTextNumberHover.should('be.visible');
+    ToolTipsPage.ValidateTextNumberHover.should('be.visible');*/
     
-  // Create buttons clicking scenario
-  // Create Buttons page
-  // Check documentation https://docs.cypress.io/api/commands/and for how to perform different types of clicking
-  // Click Double click button
-  // Validate the double click message
-  // Click rightclick button
-  // Validate the right click message
-  // Do dynamic click
-  // Validate dynamic click message
+
+   // });
+//});
+//});
+context("Progress bar ", () => {
+  context("Progress bar scenarios", () => {
+    beforeEach(() => {
+      Progressbar.visit();
+    });
+    it("Progress", () => {
+    Progressbar.StartButton.click();
+    if(Progressbar.BarInfo.contains("25%")){
+      Progressbar.StartButton.click();
+      Progressbar.BarInfo.contains("25%");
+    }
+    Progressbar.StartButton.click();
+    
+    if(Progressbar.BarInfo.contains("75%")){
+      Progressbar.StartButton.click();
+      Progressbar.BarInfo.contains("75%");
+    }
+    Progressbar.StartButton.click();
+
+    if(Progressbar.BarInfo.contains("99%")){
+      Progressbar.StartButton.click();
+      Progressbar.BarInfo.contains("99%");
+    }
+    
+  
     });
 });
 });
