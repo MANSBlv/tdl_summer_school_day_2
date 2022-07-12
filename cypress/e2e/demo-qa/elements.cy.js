@@ -3,6 +3,7 @@ import RadioButtonsPage from "../../pageObjects/radioButtonsPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 import WebTablespage from "../../pageObjects/webTablesPage";
 import ButtonsPage from "../../pageObjects/buttonsPage";
+import ToolTipsPage from "../../pageObjects/toolTipsPage";
 
 context("Elements Page", () => {
   /*context("Text box scenarios", () => {
@@ -13,7 +14,7 @@ context("Elements Page", () => {
     // Create texbox scenario
     // fill in textboxes with necessary information
     // validate the paragraphs
-    it("Filling in Text Boxes", () => {
+    //it("Filling in Text Boxes", () => {
       /*TextBoxPage.FullName.type("Random Random");
       TextBoxPage.Email.type("Random@hotmail.com");
       TextBoxPage.CurretntAddress.type("Random Street 1");
@@ -24,14 +25,14 @@ context("Elements Page", () => {
       TextBoxPage.Output.contains('Random@hotmail.com');
       TextBoxPage.Output.contains('Random Street 1');
       TextBoxPage.Output.contains('Random Street 2');*/
-    });
+    //});
   //});
 
   /*context("Check box scenarios", () => {
     beforeEach(() => {
       CheckBoxPage.visit();
     });*/
-    it("CheckBoxes", () => {
+    //it("CheckBoxes", () => {
     /*CheckBoxPage.Expand.click();
     CheckBoxPage.Leafs.contains("Notes").click();
     CheckBoxPage.Leafs.contains("React").click();
@@ -48,7 +49,7 @@ context("Elements Page", () => {
 
 
 
-    });
+    //});
     // Create CheckBoxPage page object
     // Create checkbox scenario 1:
     // Click the "+"/expand button
@@ -93,9 +94,9 @@ context("Elements Page", () => {
 
   context("Web tables scenarios", () => {
     context("Radio button scenarios", () => {
-      beforeEach(() => {
+     /* beforeEach(() => {
         WebTablespage.visit();
-      });
+      });*/
       it("WebTables", () => {
         /*WebTablespage.AddButton.click();
         WebTablespage.FirstName.type("Random");
@@ -134,7 +135,7 @@ context("Elements Page", () => {
     });
   });
 
-  context("Buttons scenarios", () => {
+  /*context("Buttons scenarios", () => {
     context("Radio button scenarios", () => {
       beforeEach(() => {
         ButtonsPage.visit();
@@ -145,7 +146,7 @@ context("Elements Page", () => {
       ButtonsPage.RightClick.rightclick();
       ButtonsPage.ValidateRightClick.contains("You have done a right click");
       ButtonsPage.ClickMe("Click Me");
-      ButtonsPage.ValidateClickMe.contains("You have done a dynamic click");
+      ButtonsPage.ValidateClickMe.contains("You have done a dynamic click");*/
 
     // Create buttons clicking scenario
     // Create Buttons page
@@ -156,6 +157,33 @@ context("Elements Page", () => {
     // Validate the right click message
     // Do dynamic click
     // Validate dynamic click message
-  });
+ /* });
+});
+});*/
+context("Tool Tips ", () => {
+  context("Tool Tips scenarios", () => {
+    beforeEach(() => {
+      ToolTipsPage.visit();
+    });
+    it("Tool", () => {
+    ToolTipsPage.HoverButton.trigger('mouseover');
+    ToolTipsPage.ValidateFirstHover.should('be.visible');
+    ToolTipsPage.HoverField.trigger('mouseover');
+    ToolTipsPage.ValidateHoverField.should('be.visible');
+    ToolTipsPage.text();
+    ToolTipsPage.ValidateContrary.should('be.visible');
+    ToolTipsPage.number();
+    ToolTipsPage.ValidateTextNumberHover.should('be.visible');
+    
+  // Create buttons clicking scenario
+  // Create Buttons page
+  // Check documentation https://docs.cypress.io/api/commands/and for how to perform different types of clicking
+  // Click Double click button
+  // Validate the double click message
+  // Click rightclick button
+  // Validate the right click message
+  // Do dynamic click
+  // Validate dynamic click message
+    });
 });
 });
