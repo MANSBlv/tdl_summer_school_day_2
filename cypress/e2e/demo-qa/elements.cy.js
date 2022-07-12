@@ -161,7 +161,7 @@ context("Elements Page", () => {
  /* });
 });
 });*/
-/*context("Tool Tips ", () => {
+context("Tool Tips ", () => {
   context("Tool Tips scenarios", () => {
     beforeEach(() => {
       ToolTipsPage.visit();
@@ -169,17 +169,23 @@ context("Elements Page", () => {
     it("Tool", () => {
     ToolTipsPage.HoverButton.trigger('mouseover');
     ToolTipsPage.ValidateFirstHover.should('be.visible');
+    
     ToolTipsPage.HoverField.trigger('mouseover');
     ToolTipsPage.ValidateHoverField.should('be.visible');
     ToolTipsPage.text();
     ToolTipsPage.ValidateContrary.should('be.visible');
     ToolTipsPage.number();
-    ToolTipsPage.ValidateTextNumberHover.should('be.visible');*/
+    ToolTipsPage.ValidateTextNumberHover.should('be.visible');
+    ToolTipsPage.ValidateTextinHoverField.contains("You hovered over the Button");
+    ToolTipsPage.ValidateTextinHoverField.contains("You hovered over the text field");
+    ToolTipsPage.ValidateTextinHoverField.contains("You hovered over the Contrary");
+    ToolTipsPage.ValidateTextinHoverField.contains("You hovered over the 1.10.32");
     
 
-   // });
-//});
-//});
+   });
+});
+});  
+/*
 context("Progress bar ", () => {
   context("Progress bar scenarios", () => {
     beforeEach(() => {
@@ -192,7 +198,7 @@ context("Progress bar ", () => {
       Progressbar.BarInfo.contains("25%");
     }
     Progressbar.StartButton.click();
-    
+
     if(Progressbar.BarInfo.contains("75%")){
       Progressbar.StartButton.click();
       Progressbar.BarInfo.contains("75%");
@@ -207,4 +213,4 @@ context("Progress bar ", () => {
   
     });
 });
-});
+}); */

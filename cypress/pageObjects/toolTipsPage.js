@@ -21,6 +21,10 @@ class ToolTipsPage extends BasePage {
       return cy.get('[aria-describedby="textFieldToolTip"]');
   }
 
+  static get ValidateTextinHoverField(){
+      return cy.get('[class="tooltip-inner"]');
+  }
+
   static get Contrary(){
       return cy.get('#texToolTopContainer');
   }
